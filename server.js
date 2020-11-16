@@ -1,5 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
+import Cors from 'cors'
 
 import Data from './data.js'
 import key from './apiKey.js'
@@ -18,6 +19,7 @@ const app = express()
 const port = 9000
 
 app.use(express.json())
+app.use(Cors())
 app.use((req,res,next) => {
   res.setHeader('Access-Contorl-Allow-Origin', '*')
   res.setHeader('Access-Contorl-Allow-Headers', '*')
